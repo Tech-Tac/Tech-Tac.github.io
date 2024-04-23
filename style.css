@@ -1,0 +1,176 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14pt;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  accent-color: #08f;
+  color-scheme: light;
+  background-color: #fff;
+  color: #000;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  text-align: center;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding-block: 16pt 8pt;
+  opacity: 0.8;
+  margin-top: auto;
+}
+
+h1,
+h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h3 {
+  margin-block: 8pt 2pt;
+}
+
+p {
+  margin-block: 8pt;
+}
+
+hr {
+  border: 1px solid #8886;
+  border-top: none;
+}
+
+.tech-tac {
+  color: transparent;
+  background-image: url("tech-tac.png");
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  padding-inline: 16pt;
+}
+
+main {
+  height: 100%;
+}
+
+button {
+  appearance: none;
+  border: none;
+  background-color: #8884;
+  border-radius: 4pt;
+  font-size: 12pt;
+  padding: 6pt 12pt;
+  line-height: 1em;
+  user-select: none;
+  text-align: center;
+  vertical-align: middle;
+}
+
+button.primary {
+  background-color: #08f;
+  color: #fff;
+}
+
+button.github {
+  background-color: #222;
+  color: #fff;
+}
+button.youtube {
+  background-color: #d22;
+  color: #fff;
+}
+button.discord {
+  background-color: #35e;
+  color: #fff;
+}
+
+button:hover {
+  background-image: linear-gradient(#fff4, #fff4);
+}
+
+button:active {
+  background-image: linear-gradient(#0002, #0002);
+}
+
+button:disabled {
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.button-group {
+  display: flex;
+  gap: 8pt;
+  justify-content: center;
+  padding-top: 8pt;
+}
+
+.wrapper {
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: start;
+  margin-inline: auto;
+  gap: 12pt;
+  padding-inline: 12pt;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 8pt;
+  border-radius: 4pt;
+  background-color: #8882;
+  width: 200pt;
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+  }
+  section {
+    width: 100%;
+  }
+}
+
+section > img:first-child {
+  width: 100%;
+  aspect-ratio: 360/256;
+  object-fit: cover;
+  height: min-content;
+  border-radius: 4pt;
+}
+
+section > .button-group:last-child {
+  margin-top: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    background-color: #222;
+    color: #fff;
+  }
+
+  button.github {
+    background-color: #ddd;
+    color: #000;
+  }
+}
