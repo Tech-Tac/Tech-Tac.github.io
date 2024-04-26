@@ -124,7 +124,7 @@ button:disabled {
   padding-top: 8pt;
 }
 
-/* This is to prevent the parent anchor from recieving focus,
+/* This is to prevent the parent anchor from receiving focus,
 redirecting it to the button directly instead */
 a:has(button) {
   visibility: hidden;
