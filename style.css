@@ -13,6 +13,7 @@
   color-scheme: light;
   background-color: #fff;
   color: #000;
+  transition: all 250ms ease-in-out;
 }
 
 body {
@@ -125,12 +126,12 @@ button:disabled {
 }
 
 /* This is to prevent the parent anchor from receiving focus,
-redirecting it to the button directly instead */
+redirecting focus to the child button directly instead */
 a:has(button) {
   visibility: hidden;
 }
-a:has(button) * {
-  visibility: initial;
+a button {
+  visibility: visible;
 }
 
 .wrapper {
@@ -190,6 +191,7 @@ section > .button-group:last-child {
   font-size: 24pt;
   border-radius: 50%;
   text-align: center;
+  line-height: 100%;
 }
 
 #theme-toggle:is(:hover, :focus-visible) {
@@ -202,7 +204,6 @@ section > .button-group:last-child {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  line-height: 100%;
 }
 
 /* Magic */
