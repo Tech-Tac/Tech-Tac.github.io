@@ -87,6 +87,10 @@ button.primary {
   color: #fff;
 }
 
+button.email {
+  background-color: #ee4;
+  color: #000;
+}
 button.github {
   background-color: #222;
   color: #fff;
