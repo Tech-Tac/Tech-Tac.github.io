@@ -124,8 +124,10 @@ button:disabled {
 
 .button-group {
   display: flex;
-  gap: 8pt;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
+  gap: 8pt;
   padding-top: 8pt;
 }
 
@@ -143,7 +145,7 @@ a button {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  justify-content: start;
+  justify-content: center;
   margin-inline: auto;
   gap: 12pt;
   padding-inline: 12pt;
