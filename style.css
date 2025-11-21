@@ -158,7 +158,7 @@ section {
   border-radius: 4pt;
   background-color: #8882;
   width: 200pt;
-  box-shadow: 0 1pt 2pt #0002;
+  box-shadow: 0 1pt 2pt #0004;
 }
 
 @media screen and (max-width: 600px) {
