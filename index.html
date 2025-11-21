@@ -3,33 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="og:url" content="https://tech-tac.github.io" />
-    <meta name="og:site_name" content="Tech-Tac" />
+
     <meta name="title" content="Tech-Tac" />
     <meta name="author" content="Tech-Tac" />
     <meta name="description" content="My projects and how to contact me." />
-    <meta name="keywords" content="Tech-Tac, Personal Website, Website, Projects, Project Showcase, Cubes" />
-    <meta name="og:image" content="avatar.png" />
-    <meta name="og:image:type" content="image/png" />
-    <meta name="og:image:width" content="256" />
-    <meta name="og:image:height" content="256" />
     <meta name="theme-color" content="#0088ff" />
+
+    <meta property="og:url" content="https://tech-tac.github.io" />
+    <meta property="og:site_name" content="Tech-Tac" />
+    <meta property="og:image" content="avatar.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+
     <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120-precomposed.png" />
     <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152-precomposed.png" />
+
     <title>Tech-Tac</title>
+
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.ico">
     <link rel="shortcut icon" href="avatar.png" type="image/png" />
   </head>
   <body>
     <header id="header">
       <input type="checkbox" id="theme-toggle" title="Toggle theme" />
-      <img src="avatar.png" alt="Avatar" height="128pt" width="128pt" />
+      <img src="avatar.png" alt="Avatar" height="128pt" width="128pt" loading="lazy" />
       <h1 style="margin-block: 0">I'm&nbsp;<span class="tech-tac">Tech-Tac</span>.</h1>
       <p>An avid JavaScript enjoyer.</p>
       <div class="button-group" id="contact">
         <a href="mailto:im.tech.tac@gmail.com"><button class="email">E-mail</button></a>
         <a href="https://github.com/Tech-Tac"><button class="github">GitHub</button></a>
-        <a href="https://discord.gg/TbyZ3wshWp"><button class="discord">Discord</button></a>
+        <a href="https://discord.gg/TbyZ3wshWp" title="Tech-Tac's Lab (Discord Server)"><button class="discord">Discord</button></a>
         <a href="https://youtube.com/@Tech-Tac"><button class="youtube">YouTube</button></a>
       </div>
       <hr />
@@ -38,34 +43,34 @@
       <h2 id="projects">My Projects</h2>
       <div class="wrapper">
         <section>
-          <img src="banners/logic_gates.png" alt="CarGame Screenshot" />
+          <img src="banners/logic_gates.png" alt="A 1-bit full-adder built with Logic Gates" />
           <h3>Logic Gates</h3>
-          <p>A little logic gate circuit simulator.</p>
+          <p>A simple logic gate circuit simulator.</p>
           <div class="button-group">
             <a href="https://tech-tac.github.io/logic-gates"><button class="primary">▶&nbsp; Try</button></a>
             <a href="https://www.github.com/Tech-Tac/logic-gates" target="_blank"><button>Source</button></a>
           </div>
         </section>
         <section>
-          <img src="banners/cargame.png" alt="CarGame Screenshot" />
+          <img src="banners/cargame.png" alt="Pixelated car with retro artifacts." />
           <h3>CarGame</h3>
-          <p>A little retro car to drive around.</p>
+          <p>A little retro car to drive around aimlessly.</p>
           <div class="button-group">
             <a href="https://tech-tac.github.io/CarGame"><button class="primary">▶&nbsp; Try</button></a>
             <a href="https://www.github.com/Tech-Tac/CarGame" target="_blank"><button>Source</button></a>
           </div>
         </section>
         <section>
-          <img src="banners/cubes.png" alt="Cubes Screenshot" />
+          <img src="banners/cubes.png" alt="Three isometric cubes of different colors." />
           <h3>Cubes</h3>
-          <p>2.5D voxel art game.</p>
+          <p>2.5D voxel rendering via CSS.</p>
           <div class="button-group">
             <a href="https://tech-tac.github.io/cubes"><button class="primary">▶&nbsp; Try</button></a>
             <a href="https://www.github.com/Tech-Tac/cubes" target="_blank"><button>Source</button></a>
           </div>
         </section>
         <section>
-          <img src="banners/loading.png" alt="Loading... Screenshot" />
+          <img src="banners/loading.png" alt="A circular loading bar surrounded by prgoress bits." />
           <h3>Loading...</h3>
           <p>A Progressbar95 clone.</p>
           <div class="button-group">
@@ -74,7 +79,7 @@
           </div>
         </section>
         <section>
-          <img src="banners/button.png" alt="Button Screenshot" />
+          <img src="banners/button.png" alt="A tempting-looking button..." />
           <h3>Button</h3>
           <p>Click as many buttons as possible!</p>
           <div class="button-group">
@@ -83,9 +88,9 @@
           </div>
         </section>
         <section>
-          <img src="banners/coming_soon.png" alt="Coming Soon" />
+          <img src="banners/coming_soon.png" alt="👀" />
           <h3>More Coming Soon!</h3>
-          <p>Stay tuned for more!</p>
+          <p>Stay tuned for more.</p>
         </section>
       </div>
     </main>
