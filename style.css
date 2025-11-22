@@ -87,12 +87,12 @@ button {
   border: none;
   outline: none;
   background-color: #8886;
-  border-radius: 4pt;
+  border-radius: 5pt;
   font-size: 12pt;
   padding: 6pt 12pt;
   user-select: none;
   vertical-align: middle;
-  box-shadow: inset 0 1pt 0 #fff2, 0 1pt 2pt #0002;
+  box-shadow: inset 0 1pt 0 #fff4, 0 1pt 1pt #0006;
   transition: all 200ms ease;
 }
 
@@ -112,6 +112,7 @@ button.github {
 button.youtube {
   background-color: #ff0000;
   color: #fff;
+  /* For contrast with the pure red */
   text-shadow: #000b 0 0px 2px;
 }
 button.discord {
@@ -151,10 +152,7 @@ button:disabled {
 /* This is to prevent the parent anchor from receiving focus,
 redirecting focus to the child button directly instead */
 a:has(button) {
-  visibility: hidden;
-}
-a button {
-  visibility: visible;
+  display: contents;
 }
 
 .wrapper {
@@ -172,10 +170,10 @@ section {
   display: flex;
   flex-direction: column;
   padding: 8pt;
-  border-radius: 4pt;
+  border-radius: 8pt;
   background-color: #8882;
   width: 200pt;
-  box-shadow: 0 1pt 2pt #0004;
+  box-shadow: 0 2pt 3pt 1pt #0004;
 }
 
 @media screen and (max-width: 600px) {
