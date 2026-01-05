@@ -229,11 +229,12 @@ section > .button-group:last-child {
 /* Magic */
 :root:has(#theme-toggle:checked) {
   color-scheme: dark;
-  background-color: var(--light-bg);
-  color: var(--light-text);
-  --inv-bg: var(--dark-bg);
-  --inv-text: var(--dark-text);
+   background-color: var(--dark-bg);
+  color: var(--dark-text);
+  --inv-bg: var(--light-bg);
+  --inv-text: var(--light-text);
 }
+
 @media (prefers-color-scheme: dark) {
   :root {
     background-color: var(--dark-bg);
@@ -243,6 +244,10 @@ section > .button-group:last-child {
   }
   :root:has(#theme-toggle:checked) {
     color-scheme: light;
+    background-color: var(--light-bg);
+    color: var(--light-text);
+    --inv-bg: var(--dark-bg);
+    --inv-text: var(--dark-text);
   }
 }
 
