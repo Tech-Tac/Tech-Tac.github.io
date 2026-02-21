@@ -229,7 +229,7 @@ section > .button-group:last-child {
 /* Magic */
 :root:has(#theme-toggle:checked) {
   color-scheme: dark;
-   background-color: var(--dark-bg);
+  background-color: var(--dark-bg);
   color: var(--dark-text);
   --inv-bg: var(--light-bg);
   --inv-text: var(--light-text);
