@@ -67,6 +67,7 @@ p {
 hr {
   border: 1px solid #8886;
   border-top: none;
+  margin-block: 16pt;
 }
 
 .tech-tac {
@@ -200,6 +201,14 @@ section > .button-group:last-child {
   margin-top: auto;
 }
 
+#messages {
+  margin-inline: 16pt;
+}
+
+#messages > section{
+  width: 100%;
+}
+
 #theme-toggle {
   appearance: none;
   outline: none;
@@ -227,6 +236,7 @@ section > .button-group:last-child {
 }
 
 /* Magic */
+/* TODO: use light-dark() */
 :root:has(#theme-toggle:checked) {
   color-scheme: dark;
   background-color: var(--dark-bg);
