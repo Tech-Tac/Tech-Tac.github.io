@@ -10,20 +10,24 @@
   --dark-bg: #222;
   --dark-text: #fff;
 
-  --inv-bg: var(--dark-bg);
-  --inv-text: var(--dark-text);
+  --accent: #2080ff;
 
-  --accent: #007fff;
+  /* For fallback */
+  --bg: var(--light-bg);
+  --text: var(--light-text);
+
+  --bg: light-dark(var(--light-bg), var(--dark-bg));
+  --text: light-dark(var(--light-text), var(--dark-text));
 
   font-family: "Noto Sans", "Segoe UI", "Roboto", Tahoma, sans-serif;
-  font-size: 14pt;
+  font-size: 1.15rem;
   scrollbar-width: thin;
   scroll-behavior: smooth;
   accent-color: var(--accent);
 
   color-scheme: light dark;
-  background-color: var(--light-bg);
-  color: var(--light-text);
+  background-color: var(--bg);
+  color: var(--text);
 
   transition-property: background-color, color;
   transition-duration: 250ms;
@@ -44,7 +48,7 @@ header {
 footer {
   width: 100%;
   text-align: center;
-  padding-block: 16pt 8pt;
+  padding-block: 1em 0.5em;
   opacity: 0.8;
   margin-top: auto;
 }
@@ -57,17 +61,17 @@ h2 {
 }
 
 h3 {
-  margin-block: 8pt 2pt;
+  margin-block: 0.5em 0.25em;
 }
 
 p {
-  margin-block: 8pt;
+  margin-block: 0.25em;
 }
 
 hr {
   border: 1px solid #8886;
   border-top: none;
-  margin-block: 16pt;
+  margin-block: 1em;
 }
 
 .tech-tac {
@@ -76,7 +80,7 @@ hr {
   background-size: contain;
   background-position: bottom;
   background-repeat: no-repeat;
-  padding-inline: 16pt;
+  padding-inline: 1em;
 }
 
 main {
@@ -86,14 +90,14 @@ main {
 button {
   appearance: none;
   border: none;
-  outline: none;
+  outline: solid transparent 0px;
   background-color: #8886;
-  border-radius: 5pt;
-  font-size: 12pt;
-  padding: 6pt 12pt;
+  border-radius: 12px;
+  font-size: 1rem;
+  padding: 8px 16px;
   user-select: none;
   vertical-align: middle;
-  box-shadow: inset 0 1pt 0 #fff4, 0 1pt 1pt #0006;
+  box-shadow: inset 0 2px 0 #fff4, 0 2px 3px #0006;
   transition: all 200ms ease;
 }
 
@@ -107,8 +111,8 @@ button.email {
   color: #000;
 }
 button.github {
-  background-color: var(--inv-bg);
-  color: var(--inv-text);
+  background-color: var(--text);
+  color: var(--bg);
 }
 button.youtube {
   background-color: #ff0000;
@@ -124,7 +128,7 @@ button.discord {
 button:hover {
   /* Using a single-color translucent gradient as a background-image to
    blend it with background-color for browsers that don't support color-mix. */
-  background-image: linear-gradient(#fff4, #fff4);
+  background-image: linear-gradient(#8886, #8886);
 }
 
 button:active {
@@ -132,8 +136,8 @@ button:active {
   box-shadow: none;
 }
 
-button:focus-visible {
-  box-shadow: inset 0 1pt 0 #fff2, 0 1pt 2pt #0002, #888f 0 0 0 4pt;
+:is(button, #theme-toggle):focus-visible {
+  outline: 6px solid var(--accent);
 }
 
 button:disabled {
@@ -146,8 +150,8 @@ button:disabled {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 8pt;
-  padding-top: 8pt;
+  gap: 1em;
+  padding-top: 0.5em;
 }
 
 /* This is to prevent the parent anchor from receiving focus,
@@ -163,18 +167,18 @@ a:has(button) {
   align-items: stretch;
   justify-content: center;
   margin-inline: auto;
-  gap: 12pt;
-  padding-inline: 12pt;
+  gap: 1em;
+  padding-inline: 1em;
 }
 
 section {
   display: flex;
   flex-direction: column;
-  padding: 8pt;
-  border-radius: 8pt;
-  background-color: #8882;
-  width: 200pt;
-  box-shadow: 0 2pt 3pt 1pt #0004;
+  padding: 0.75em;
+  border-radius: 1em;
+  background-color: #6662;
+  width: 16em;
+  box-shadow: 0 4px 4px #0003, inset 0 1px 0 0 #fff2;
 }
 
 @media screen and (max-width: 600px) {
@@ -194,7 +198,7 @@ section > img:first-child {
   aspect-ratio: 360/256;
   object-fit: cover;
   height: min-content;
-  border-radius: 4pt;
+  border-radius: 0.25em;
 }
 
 section > .button-group:last-child {
@@ -202,29 +206,33 @@ section > .button-group:last-child {
 }
 
 #messages {
-  margin-inline: 16pt;
+  width: 100%;
 }
 
 #kao-banner{
-  width: 100%;
+  width: auto;
+  max-width: 56em;
 }
 
 #theme-toggle {
   appearance: none;
-  outline: none;
+  margin: 0;
   position: absolute;
-  background-color: transparent;
-  right: 16pt;
-  top: 16pt;
-  width: 32pt;
-  height: 32pt;
-  font-size: 16pt;
+  
+  right: 1.5rem;
+  top: 1.5rem;
+  width: 2em;
+  height: 2em;
+  font-size: 1.25rem;
   border-radius: 50%;
   display: flex;
   justify-content: center; 
   align-items: center;   
   text-align: center;
-  line-height: 1;
+
+  outline: 0px solid transparent;
+
+  transition: outline 200ms ease;
 }
 
 #theme-toggle:is(:hover, :focus-visible) {
@@ -236,34 +244,21 @@ section > .button-group:last-child {
 }
 
 /* Magic */
-/* TODO: use light-dark() */
 :root:has(#theme-toggle:checked) {
   color-scheme: dark;
-  background-color: var(--dark-bg);
-  color: var(--dark-text);
-  --inv-bg: var(--light-bg);
-  --inv-text: var(--light-text);
 }
-
 @media (prefers-color-scheme: dark) {
-  :root {
-    background-color: var(--dark-bg);
-    color: var(--dark-text);
-    --inv-bg: var(--light-bg);
-    --inv-text: var(--light-text);
-  }
   :root:has(#theme-toggle:checked) {
     color-scheme: light;
-    background-color: var(--light-bg);
-    color: var(--light-text);
-    --inv-bg: var(--dark-bg);
-    --inv-text: var(--dark-text);
   }
 }
 
-@supports not selector(:has(*)) {
-  /* Hide the useless button! */
-  #theme-selector{
-    display: none;
+#theme-selector {
+  display: none;
+}
+
+@supports selector(:has(*)) and (color: light-dark(#fff, #000)) {
+  #theme-selector {
+    display: block;
   }
 }
